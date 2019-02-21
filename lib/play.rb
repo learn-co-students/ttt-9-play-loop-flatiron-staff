@@ -1,4 +1,6 @@
 # Helper Methods
+$counter = 0
+
 def display_board(board)
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
   puts "-----------"
@@ -30,7 +32,14 @@ def turn(board)
   if valid_move?(board, index)
     move(board, index)
     display_board(board)
+    $counter += 1
   else
+    turn(board)
+  end
+end
+
+def play(board)
+  until $counter >= 9
     turn(board)
   end
 end
