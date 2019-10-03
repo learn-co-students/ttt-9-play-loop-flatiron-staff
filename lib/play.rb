@@ -31,8 +31,25 @@ def turn(board)
     move(board, index)
     display_board(board)
   else
+    puts "Please try again"
     turn(board)
   end
 end
 
 # Define your play method below
+
+def play(board)
+  counter = 0  
+    until counter === 9
+      turn(board)
+      counter += 1
+    end
+
+    # while counter < 9
+    #   turn(board)
+    #   counter +=1
+    # end
+    
+end
+
+
