@@ -36,3 +36,8 @@ def turn(board)
 end
 
 # Define your play method below
+def play(board)
+  until board.all? { |space| space.include?('X') || space.include?('O') }
+    turn(board)
+  end
+end
